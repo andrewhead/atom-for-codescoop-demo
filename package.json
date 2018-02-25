@@ -81,7 +81,6 @@
   },
   "packageDependencies": {
     "one-light-ui": "1.8.2",
-    "atom-material-syntax-light": "0.4.6",
     "bracket-matcher": "0.82.2",
     "command-palette": "0.39.1",
     "notifications": "0.65.1",
