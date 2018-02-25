@@ -200,7 +200,8 @@ class Workspace extends Model
     unless process.platform is 'darwin'
       titleParts.push appName
 
-    document.title = titleParts.join(" \u2014 ")
+    # document.title = titleParts.join(" \u2014 ")
+    document.title = "CodeScoop Demo"
     @applicationDelegate.setRepresentedFilename(representedPath)
 
   # On macOS, fades the application window's proxy icon when the current file
