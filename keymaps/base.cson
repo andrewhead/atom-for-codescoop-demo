@@ -6,32 +6,13 @@
   'shift-end': 'editor:select-to-end-of-line'
 
 'atom-text-editor:not([mini])':
-  # Atom Specific
-  'ctrl-C': 'editor:copy-path'
-
   # Sublime Parity
   'tab': 'editor:indent'
   'enter': 'editor:newline'
-  'shift-tab': 'command-palette:toggle'
-  'ctrl-K': 'editor:delete-line'
-
-'.select-list atom-text-editor[mini]':
-  'enter': 'core:confirm'
-
-'.tool-panel.panel-left, .tool-panel.panel-right':
-  'escape': 'tool-panel:unfocus'
-
-'atom-text-editor !important, atom-text-editor[mini] !important':
-  'escape': 'editor:consolidate-selections'
+  # 'shift-tab': 'command-palette:toggle'
 
 # allow standard input fields to work correctly
 'body .native-key-bindings':
-  'tab': 'core:focus-next'
-  'shift-tab': 'core:focus-previous'
-  'enter': 'native!'
-  'backspace': 'native!'
-  'shift-backspace': 'native!'
-  'delete': 'native!'
   'up': 'native!'
   'down': 'native!'
   'shift-up': 'native!'
@@ -64,9 +45,4 @@
   'ctrl-right': 'native!'
   'ctrl-shift-left': 'native!'
   'ctrl-shift-right': 'native!'
-  'ctrl-b': 'native!'
   'ctrl-f': 'native!'
-  'ctrl-F': 'native!'
-  'ctrl-B': 'native!'
-  'ctrl-h': 'native!'
-  'ctrl-d': 'native!'
