@@ -256,7 +256,10 @@ class ApplicationDelegate
     ipcRenderer.send('did-change-history-manager')
 
   openExternal: (url) ->
-    shell.openExternal(url)
+    if shell?
+      shell.openExternal url
+    else
+      window.open url, "_blank"
 
   disableZoom: ->
     outerCallback = ->
