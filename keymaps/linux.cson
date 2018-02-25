@@ -59,11 +59,6 @@
   'ctrl-down': 'core:move-down'
   'ctrl-shift-up': 'core:move-up'
   'ctrl-shift-down': 'core:move-down'
-  'ctrl-=': 'window:increase-font-size'
-  'ctrl-+': 'window:increase-font-size'
-  'ctrl--': 'window:decrease-font-size'
-  'ctrl-_': 'window:decrease-font-size'
-  'ctrl-0': 'window:reset-font-size'
 
   'ctrl-k up': 'pane:split-up-and-copy-active-item' # Atom Specific
   'ctrl-k down': 'pane:split-down-and-copy-active-item' # Atom Specific

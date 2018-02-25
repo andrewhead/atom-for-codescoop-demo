@@ -77,11 +77,6 @@
   'ctrl-tab ^ctrl': 'pane:move-active-item-to-top-of-stack'
   'ctrl-shift-tab': 'pane:show-previous-recently-used-item'
   'ctrl-shift-tab ^ctrl': 'pane:move-active-item-to-top-of-stack'
-  'cmd-=': 'window:increase-font-size'
-  'cmd-+': 'window:increase-font-size'
-  'cmd--': 'window:decrease-font-size'
-  'cmd-_': 'window:decrease-font-size'
-  'cmd-0': 'window:reset-font-size'
 
   'cmd-k up': 'pane:split-up-and-copy-active-item' # Atom Specific
   'cmd-k down': 'pane:split-down-and-copy-active-item' # Atom Specific
