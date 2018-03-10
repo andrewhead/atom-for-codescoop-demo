@@ -617,6 +617,8 @@ class Pane extends Model
   #   The return value will be that of `nextAction` or `undefined` if it was not
   #   provided
   saveItem: (item, nextAction) =>
+    # Don't actually save any files
+    """
     if typeof item?.getURI is 'function'
       itemURI = item.getURI()
     else if typeof item?.getUri is 'function'
@@ -633,6 +635,7 @@ class Pane extends Model
           @handleSaveError(error, item)
     else
       @saveItemAs(item, nextAction)
+    """
 
   # Public: Prompt the user for a location and save the active item with the
   # path they select.
@@ -643,6 +646,8 @@ class Pane extends Model
   #   The return value will be that of `nextAction` or `undefined` if it was not
   #   provided
   saveItemAs: (item, nextAction) =>
+    # Don't actually save any files
+    """
     return unless item?.saveAs?
 
     saveOptions = item.getSaveDialogOptions?() ? {}
@@ -657,6 +662,7 @@ class Pane extends Model
           nextAction(error)
         else
           @handleSaveError(error, item)
+    """
 
   # Public: Save all items.
   saveItems: ->

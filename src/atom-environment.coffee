@@ -713,9 +713,9 @@ class AtomEnvironment extends Model
       @windowDimensions = state?.windowDimensions
       @displayWindow().then =>
         @commandInstaller.installAtomCommand false, (error) ->
-          console.warn error.message if error?
+          # console.warn error.message if error?
         @commandInstaller.installApmCommand false, (error) ->
-          console.warn error.message if error?
+          # console.warn error.message if error?
 
         @disposables.add(@applicationDelegate.onDidOpenLocations(@openLocations.bind(this)))
         @disposables.add(@applicationDelegate.onApplicationMenuCommand(@dispatchApplicationMenuCommand.bind(this)))
