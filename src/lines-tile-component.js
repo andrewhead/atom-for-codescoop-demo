@@ -1,3 +1,4 @@
+/** @babel */
 const HighlightsComponent = require('./highlights-component')
 const ZERO_WIDTH_NBSP = '\ufeff'
 

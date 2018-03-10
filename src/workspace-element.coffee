@@ -3,6 +3,7 @@ path = require 'path'
 fs = require 'fs-plus'
 {CompositeDisposable} = require 'event-kit'
 scrollbarStyle = require 'scrollbar-style'
+require 'document-register-element'
 
 module.exports =
 class WorkspaceElement extends HTMLElement

@@ -1,4 +1,5 @@
 {CompositeDisposable} = require 'event-kit'
+require 'document-register-element'
 
 class PanelContainerElement extends HTMLElement
   createdCallback: ->

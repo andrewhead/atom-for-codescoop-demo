@@ -1,3 +1,4 @@
+/** @babel */
 'use babel'
 
 import {Emitter, CompositeDisposable} from 'event-kit'

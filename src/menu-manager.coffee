@@ -108,7 +108,7 @@ class MenuManager
   # Returns a {Boolean}, true to include the selector, false otherwise.
   includeSelector: (selector) ->
     try
-      return true if document.body.webkitMatchesSelector(selector)
+      return true if document.body.matches(selector)
     catch error
       # Selector isn't valid
       return false
@@ -135,7 +135,7 @@ class MenuManager
 
     element = @testEditor
     while element
-      return true if element.webkitMatchesSelector(selector)
+      return true if element.matches(selector)
       element = element.parentElement
 
     false

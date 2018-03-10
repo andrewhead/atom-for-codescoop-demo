@@ -1,3 +1,4 @@
+/** @babel */
 'use strict'
 
 var crypto = require('crypto')
@@ -36,8 +37,17 @@ exports.compile = function (sourceCode, filePath) {
   var output = CoffeeScript.compile(sourceCode, {
     filename: filePath,
     sourceFiles: [filePath],
-    inlineMap: true
+    inlineMap: true,
+    transpile: {
+      plugins: [
+        "@babel/plugin-transform-for-of"
+      ]
+    }
   })
+
+  var result = /(\s*\bfor\b.*\bof\b.*\s)/.exec(output)
+  if (result)
+    console.log(filePath, result[1])
 
   // Strip sourceURL from output so there wouldn't be duplicate entries
   // in devtools.

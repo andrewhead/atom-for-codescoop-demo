@@ -1,3 +1,4 @@
+/** @babel */
 'use strict'
 
 // For now, we're not using babel or ES6 features like `let` and `const` in
@@ -85,14 +86,19 @@ exports.resetCacheStats = function () {
 function compileFileAtPath (compiler, filePath, extension) {
   var sourceCode = fs.readFileSync(filePath, 'utf8')
   if (compiler.shouldCompile(sourceCode, filePath)) {
-    var cachePath = compiler.getCachePath(sourceCode, filePath)
-    var compiledCode = readCachedJavascript(cachePath)
+    var compiledCode = undefined
+    if (cacheDirectory) {
+      var cachePath = compiler.getCachePath(sourceCode, filePath)
+      compiledCode = readCachedJavascript(cachePath)
+    }
     if (compiledCode != null) {
       cacheStats[extension].hits++
     } else {
       cacheStats[extension].misses++
       compiledCode = compiler.compile(sourceCode, filePath)
-      writeCachedJavascript(cachePath, compiledCode)
+      if (cacheDirectory) {
+        writeCachedJavascript(cachePath, compiledCode)
+      }
     }
     return compiledCode
   }

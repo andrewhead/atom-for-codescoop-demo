@@ -1,6 +1,7 @@
 /** @babel */
 
-import { SelectListView } from 'atom-space-pen-views'
+SelectListView = undefined
+// import { SelectListView } from 'atom-space-pen-views'
 
 export default class ReopenProjectListView extends SelectListView {
   initialize (callback) {

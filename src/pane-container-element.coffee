@@ -1,5 +1,6 @@
 {CompositeDisposable} = require 'event-kit'
 _ = require 'underscore-plus'
+require 'document-register-element'
 
 module.exports =
 class PaneContainerElement extends HTMLElement

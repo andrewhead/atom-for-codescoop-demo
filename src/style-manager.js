@@ -1,3 +1,4 @@
+/** @babel */
 const {Emitter, Disposable} = require('event-kit')
 const crypto = require('crypto')
 const fs = require('fs-plus')

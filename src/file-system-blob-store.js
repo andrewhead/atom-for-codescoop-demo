@@ -1,3 +1,4 @@
+/** @babel */
 'use strict'
 
 const fs = require('fs-plus')

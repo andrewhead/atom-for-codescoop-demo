@@ -1,3 +1,4 @@
+/** @babel */
 'use strict'
 
 const Module = require('module')

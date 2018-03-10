@@ -668,10 +668,16 @@ class TextEditorComponent
       onMouseUp() if event.which is 0
 
     onMouseUp = (event) =>
+
       if dragging
-        stopDragging()
         @editor.finalizeSelections()
         @editor.mergeIntersectingSelections()
+  
+      # To support Firefox, we move the `stopDragging` checks outside of the
+      # `ifDragging` check, as we always want to stop the dragging listeners
+      # (mousemove, mouseup) regardless of whether dragging was happening.
+      stopDragging()
+
       pasteSelectionClipboard(event)
 
     stopDragging = ->

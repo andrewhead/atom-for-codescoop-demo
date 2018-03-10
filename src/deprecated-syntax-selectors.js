@@ -1,3 +1,4 @@
+/** @babel */
 module.exports = new Set([
   'AFDKO', 'AFKDO', 'ASS', 'AVX', 'AVX2', 'AVX512', 'AVX512BW', 'AVX512DQ',
   'Alignment', 'Alpha', 'AlphaLevel', 'Angle', 'Animation', 'AnimationGroup',

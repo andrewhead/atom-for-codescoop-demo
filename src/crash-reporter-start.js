@@ -1,3 +1,4 @@
+/** @babel */
 module.exports = function (extra) {
   const {crashReporter} = require('electron')
   crashReporter.start({

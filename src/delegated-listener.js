@@ -1,3 +1,4 @@
+/** @babel */
 const EventKit = require('event-kit')
 
 module.exports =

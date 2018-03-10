@@ -157,7 +157,7 @@ class CommandRegistry
 
       for commandName, listeners of @selectorBasedListenersByCommandName
         for listener in listeners
-          if currentTarget.webkitMatchesSelector?(listener.selector)
+          if currentTarget.matches?(listener.selector)
             unless commandNames.has(commandName)
               commandNames.add(commandName)
               commands.push
@@ -238,10 +238,10 @@ class CommandRegistry
 
     loop
       listeners = @inlineListenersByCommandName[event.type]?.get(currentTarget) ? []
-      if currentTarget.webkitMatchesSelector?
+      if currentTarget.matches?
         selectorBasedListeners =
           (@selectorBasedListenersByCommandName[event.type] ? [])
-            .filter (listener) -> currentTarget.webkitMatchesSelector(listener.selector)
+            .filter (listener) -> currentTarget.matches(listener.selector)
             .sort (a, b) -> a.compare(b)
         listeners = selectorBasedListeners.concat(listeners)
 

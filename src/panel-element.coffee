@@ -1,4 +1,5 @@
 {CompositeDisposable} = require 'event-kit'
+require 'document-register-element'
 Panel = require './panel'
 
 class PanelElement extends HTMLElement

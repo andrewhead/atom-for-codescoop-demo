@@ -1,3 +1,4 @@
+/** @babel */
 'use strict'
 // This file is required by compile-cache, which is required directly from
 // apm, so it can only use the subset of newer JavaScript features that apm's
@@ -36,6 +37,7 @@ class PackageTranspilationRegistry {
   // only if a package hasn't registered its desire to transpile its own source.
   wrapTranspiler (transpiler) {
     return {
+      transpiler: transpiler,
       getCachePath: (sourceCode, filePath) => {
         const spec = this.getPackageTranspilerSpecForFilePath(filePath)
         if (spec) {

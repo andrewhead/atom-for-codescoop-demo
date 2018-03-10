@@ -1,3 +1,5 @@
+require 'document-register-element'
+
 class PaneResizeHandleElement extends HTMLElement
   createdCallback: ->
     @resizePane = @resizePane.bind(this)

@@ -1,3 +1,4 @@
+/** @babel */
 const {Point} = require('text-buffer')
 
 module.exports = class TokenizedBufferIterator {

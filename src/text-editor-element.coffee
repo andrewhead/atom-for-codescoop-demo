@@ -1,4 +1,5 @@
 Grim = require 'grim'
+require 'document-register-element'
 {Emitter, CompositeDisposable} = require 'event-kit'
 TextBuffer = require 'text-buffer'
 TextEditorComponent = require './text-editor-component'
@@ -141,7 +142,7 @@ class TextEditorElement extends HTMLElement
 
   inputNodeBlurred: (event) ->
     if event.relatedTarget isnt this
-      @dispatchEvent(new FocusEvent('blur', bubbles: false))
+      @dispatchEvent(new CustomEvent('blur', bubbles: false))
 
   addGrammarScopeAttribute: ->
     @dataset.grammar = @model.getGrammar()?.scopeName?.replace(/\./g, ' ')

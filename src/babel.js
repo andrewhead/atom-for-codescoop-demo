@@ -4,7 +4,9 @@ var crypto = require('crypto')
 var path = require('path')
 var defaultOptions = require('../static/babelrc.json')
 
-var babel = null
+// var babel = null
+var babel = require('babel-core')
+// require('babel/polyfill')
 var babelVersionDirectory = null
 
 var PREFIXES = [
@@ -19,6 +21,7 @@ var PREFIX_LENGTH = Math.max.apply(Math, PREFIXES.map(function (prefix) {
 }))
 
 exports.shouldCompile = function (sourceCode) {
+  // return true
   var start = sourceCode.substr(0, PREFIX_LENGTH)
   return PREFIXES.some(function (prefix) {
     return start.indexOf(prefix) === 0
@@ -42,7 +45,6 @@ exports.getCachePath = function (sourceCode) {
 
 exports.compile = function (sourceCode, filePath) {
   if (!babel) {
-    babel = require('babel-core')
     var Logger = require('babel-core/lib/transformation/file/logger')
     var noop = function () {}
     Logger.prototype.debug = noop
@@ -57,7 +59,33 @@ exports.compile = function (sourceCode, filePath) {
   for (var key in defaultOptions) {
     options[key] = defaultOptions[key]
   }
-  return babel.transform(sourceCode, options).code
+
+  // Initialize presets list
+  // Shims for a failed attempt at a port to a more recent Babel.
+  /*
+  if (!options.presets) {
+    options.presets = []
+  }
+  options.presets.push(require.resolve("babel-preset-es2015"))
+  options.presets.push(require.resolve("babel-preset-stage-0"))
+
+  // Initialize plugins list
+  if (!options.plugins) {
+    options.plugins = []
+  }
+  options.plugins.push("transform-es2015-for-of")
+  */
+  var output = babel.transform(sourceCode, options).code
+
+  /*
+  var result = /(\s*\bfor\b.*\bof\b.*\s)/.exec(output)
+  if (result)
+    console.log(filePath, result[1])
+  else
+    console.log("No match found")
+  */
+
+  return output
 }
 
 function createVersionAndOptionsDigest (version, options) {

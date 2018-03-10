@@ -516,7 +516,7 @@ class Package
             return unless event.type is command
             currentTarget = event.target
             while currentTarget
-              if currentTarget.webkitMatchesSelector(selector)
+              if currentTarget.matches(selector)
                 @activationCommandSubscriptions.dispose()
                 @activateNow()
                 break

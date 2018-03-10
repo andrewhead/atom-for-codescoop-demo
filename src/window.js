@@ -1,3 +1,4 @@
+/** @babel */
 // Public: Measure how long a function takes to run.
 //
 // description - A {String} description that will be logged to the console when

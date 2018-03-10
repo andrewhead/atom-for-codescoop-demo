@@ -1,3 +1,4 @@
+/** @babel */
 'use strict'
 
 const Disposable = require('event-kit').Disposable

@@ -131,7 +131,7 @@ class ContextMenuManager
     while currentTarget?
       currentTargetItems = []
       matchingItemSets =
-        @itemSets.filter (itemSet) -> currentTarget.webkitMatchesSelector(itemSet.selector)
+        @itemSets.filter (itemSet) -> currentTarget.matches(itemSet.selector)
 
       for itemSet in matchingItemSets
         for item in itemSet.items

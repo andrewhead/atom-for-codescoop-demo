@@ -1,4 +1,5 @@
 {Emitter, CompositeDisposable} = require 'event-kit'
+require 'document-register-element'
 
 class StylesElement extends HTMLElement
   subscriptions: null

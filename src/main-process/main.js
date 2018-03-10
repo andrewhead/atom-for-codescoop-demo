@@ -1,3 +1,5 @@
+require('babel/polyfill')
+
 const startTime = Date.now()
 
 const electron = require('electron')

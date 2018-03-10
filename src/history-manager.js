@@ -89,6 +89,9 @@ export class HistoryManager {
     this.localStorage.setItem('history', state)
   }
 
+  importProjectHistory() {}
+
+  /*
   async importProjectHistory () {
     for (let project of await HistoryImporter.getAllProjects()) {
       this.addProject(project.paths, project.lastOpened)
@@ -96,6 +99,7 @@ export class HistoryManager {
     this.saveState()
     this.didChangeProjects()
   }
+  */
 }
 
 export class HistoryProject {
@@ -112,10 +116,19 @@ export class HistoryProject {
 }
 
 class HistoryImporter {
+  static getStateStoreCursor() { return undefined; }
+  /*
   static async getStateStoreCursor () {
     const db = await atom.stateStore.dbPromise
     const store = db.transaction(['states']).objectStore('states')
     return store.openCursor()
+  }
+  */
+
+  static getAllProjects (stateStore) {
+    return new Projmise((resolve, reject) => {
+      resolve([]);
+    })
   }
 
   static async getAllProjects (stateStore) {

@@ -165,7 +165,7 @@ module.exports = ({commandRegistry, commandInstaller, config, notificationManage
     'editor:copy-selection': -> @copyOnlySelectedText()
   )
 
-  commandRegistry.add 'atom-text-editor:not([mini])', stopEventPropagation(
+  commandRegistry.add 'atom-text-editor', stopEventPropagation(
     'core:move-up': -> @moveUp()
     'core:move-down': -> @moveDown()
     'core:move-to-top': -> @moveToTop()
@@ -203,7 +203,7 @@ module.exports = ({commandRegistry, commandInstaller, config, notificationManage
     'editor:scroll-to-cursor': -> @scrollToCursorPosition()
   )
 
-  commandRegistry.add 'atom-text-editor:not([mini])', stopEventPropagationAndGroupUndo(config,
+  commandRegistry.add 'atom-text-editor', stopEventPropagationAndGroupUndo(config,
     'editor:indent': -> @indent()
     'editor:auto-indent': -> @autoIndentSelectedRows()
     'editor:indent-selected-rows': -> @indentSelectedRows()

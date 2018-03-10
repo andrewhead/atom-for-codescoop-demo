@@ -1,4 +1,5 @@
 path = require 'path'
+require 'document-register-element'
 {CompositeDisposable} = require 'event-kit'
 
 class PaneElement extends HTMLElement

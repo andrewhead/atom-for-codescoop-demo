@@ -1,3 +1,4 @@
+/** @babel */
 'use strict'
 
 var _ = require('underscore-plus')

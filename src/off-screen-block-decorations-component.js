@@ -1,3 +1,4 @@
+/** @babel */
 module.exports = class OffScreenBlockDecorationsComponent {
   constructor ({presenter, views}) {
     this.presenter = presenter

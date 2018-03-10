@@ -1,4 +1,5 @@
 {CompositeDisposable} = require 'event-kit'
+require 'document-register-element'
 PaneResizeHandleElement = require './pane-resize-handle-element'
 
 class PaneAxisElement extends HTMLElement
