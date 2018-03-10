@@ -10,7 +10,12 @@ class PaneAxisElement extends HTMLElement
   detachedCallback: ->
     @subscriptions.dispose()
     @subscriptions = null
-    @childRemoved({child}) for child in @model.getChildren()
+    # I have no idea what this line is supposed to do, but it makes the demo
+    # crash on Safari and possibly Firefox.  So I'm removing it.  The best
+    # I can figure out is that this callback gets called *too late* when it's
+    # not in Chrome, and then ends up unintentionally removing the elements
+    # with the text editor when it finally gets called.
+    # @childRemoved({child}) for child in @model.getChildren()
 
   initialize: (@model, {@views}) ->
     throw new Error("Must pass a views parameter when initializing TextEditorElements") unless @views?
