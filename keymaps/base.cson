@@ -5,7 +5,6 @@
   'shift-home': 'editor:select-to-first-character-of-line'
   'shift-end': 'editor:select-to-end-of-line'
 
-'atom-text-editor:not([mini])':
   # Sublime Parity
   'tab': 'editor:indent'
   'enter': 'editor:newline'
