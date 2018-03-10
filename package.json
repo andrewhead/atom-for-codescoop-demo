@@ -16,6 +16,7 @@
   "dependencies": {
     "async": "0.2.6",
     "atom-keymap": "^8.2.9",
+    "atom-patch": "github:andrewhead/atom-patch",
     "atom-ui": "0.4.1",
     "cached-run-in-this-context": "0.4.1",
     "chai": "3.5.0",
