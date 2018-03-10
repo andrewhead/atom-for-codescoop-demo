@@ -241,7 +241,7 @@ class TextEditorComponent
     @disposables.add @editor.observeGrammar(@onGrammarChanged)
 
   listenForDOMEvents: ->
-    @domNode.addEventListener 'mousewheel', @onMouseWheel
+    addWheelListener @domNode, @onMouseWheel
     @domNode.addEventListener 'textInput', @onTextInput
     @scrollViewNode.addEventListener 'mousedown', @onMouseDown
     @scrollViewNode.addEventListener 'scroll', @onScrollViewScroll
@@ -396,7 +396,9 @@ class TextEditorComponent
 
   onMouseWheel: (event) =>
     # Only scroll in one direction at a time
-    {wheelDeltaX, wheelDeltaY} = event
+    change = normalizeWheel event
+    wheelDeltaX = change.pixelX
+    wheelDeltaY = -change.pixelY
 
     if Math.abs(wheelDeltaX) > Math.abs(wheelDeltaY)
       # Scrolling horizontally
