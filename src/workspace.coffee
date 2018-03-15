@@ -435,15 +435,19 @@ class Workspace extends Model
   open: (uri, options={}) ->
     searchAllPanes = options.searchAllPanes
     split = options.split
-    uri = @project.resolvePath(uri)
+    # Stupid fix to support multiple operating systems.  If we resolve the path
+    # here, it will be changed to a Unix-style absolute path, which with then
+    # fail file-path checks on Windows.  So just leave any relative paths as
+    # relative paths for now.
+    # uri = @project.resolvePath(uri)
 
     if not atom.config.get('core.allowPendingPaneItems')
       options.pending = false
 
     # Avoid adding URLs as recent documents to work-around this Spotlight crash:
     # https://github.com/atom/atom/issues/10071
-    if uri? and not url.parse(uri).protocol?
-      @applicationDelegate.addRecentDocument(uri)
+    # if uri? and not url.parse(uri).protocol?
+    #   @applicationDelegate.addRecentDocument(uri)
 
     pane = @paneContainer.paneForURI(uri) if searchAllPanes
     pane ?= switch split
