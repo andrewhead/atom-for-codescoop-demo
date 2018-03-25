@@ -41,6 +41,10 @@ class LineNumbersTileComponent
 
     if @newTileState.top isnt @oldTileState.top
       @domNode.style['-webkit-transform'] = "translate3d(0, #{@newTileState.top}px, 0px)"
+      @domNode.style['-moz-transform'] = "translate3d(0, #{@newTileState.top}px, 0px)"
+      @domNode.style['-ms-transform'] = "translate3d(0, #{@newTileState.top}px, 0px)"
+      @domNode.style['-o-transform'] = "translate3d(0, #{@newTileState.top}px, 0px)"
+      @domNode.style['transform'] = "translate3d(0, #{@newTileState.top}px, 0px)"
       @oldTileState.top = @newTileState.top
 
     if @newTileState.zIndex isnt @oldTileState.zIndex
