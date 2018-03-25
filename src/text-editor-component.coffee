@@ -395,6 +395,10 @@ class TextEditorComponent
         @pendingScrollLeft = null
 
   onMouseWheel: (event) =>
+
+    # Prevent default behavior (going back on swipe)
+    event.preventDefault()
+
     # Only scroll in one direction at a time
     change = normalizeWheel event
     wheelDeltaX = -change.pixelX
