@@ -397,7 +397,7 @@ class TextEditorComponent
   onMouseWheel: (event) =>
     # Only scroll in one direction at a time
     change = normalizeWheel event
-    wheelDeltaX = change.pixelX
+    wheelDeltaX = -change.pixelX
     wheelDeltaY = -change.pixelY
 
     if Math.abs(wheelDeltaX) > Math.abs(wheelDeltaY)
