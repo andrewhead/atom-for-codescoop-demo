@@ -32,7 +32,6 @@
 
   # Sublime Parity
   'ctrl-a': 'core:select-all'
-  'ctrl-l': 'editor:select-line'
 
 'atom-workspace atom-pane':
   'ctrl-alt-=': 'pane:increase-size'

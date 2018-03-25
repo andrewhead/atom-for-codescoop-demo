@@ -44,7 +44,6 @@
 
   # Sublime Parity
   'cmd-a': 'core:select-all'
-  'cmd-l': 'editor:select-line'
   'ctrl-alt-left': 'editor:move-to-previous-subword-boundary'
   'ctrl-alt-right': 'editor:move-to-next-subword-boundary'
   'ctrl-alt-shift-left': 'editor:select-to-previous-subword-boundary'
