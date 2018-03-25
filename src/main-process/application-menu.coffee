@@ -119,7 +119,6 @@ class ApplicationMenu
       label: "Atom"
       submenu: [
           {label: "Check for Update", metadata: {autoUpdate: true}}
-          {label: 'Reload', accelerator: 'Command+R', click: => @focusedWindow()?.reload()}
           {label: 'Close Window', accelerator: 'Command+Shift+W', click: => @focusedWindow()?.close()}
           {label: 'Toggle Dev Tools', accelerator: 'Command+Alt+I', click: => @focusedWindow()?.toggleDevTools()}
           {label: 'Quit', accelerator: 'Command+Q', click: -> app.quit()}

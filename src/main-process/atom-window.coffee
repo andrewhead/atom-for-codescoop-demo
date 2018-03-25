@@ -258,9 +258,9 @@ class AtomWindow
   isSpecWindow: -> @isSpec
 
   reload: ->
-    @loadedPromise = new Promise((@resolveLoadedPromise) =>)
-    @saveState().then => @browserWindow.reload()
-    @loadedPromise
+    # @loadedPromise = new Promise((@resolveLoadedPromise) =>)
+    # @saveState().then => @browserWindow.reload()
+    # @loadedPromise
 
   toggleDevTools: -> @browserWindow.toggleDevTools()
 

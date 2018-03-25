@@ -8,7 +8,7 @@ class WindowEventHandler
     @reloadRequested = false
     @subscriptions = new CompositeDisposable
 
-    @addEventListener(@window, 'beforeunload', @handleWindowBeforeunload)
+    # @addEventListener(@window, 'beforeunload', @handleWindowBeforeunload)
     @addEventListener(@window, 'focus', @handleWindowFocus)
     @addEventListener(@window, 'blur', @handleWindowBlur)
 
@@ -32,7 +32,7 @@ class WindowEventHandler
     @subscriptions.add @atomEnvironment.commands.add @window,
       'window:toggle-full-screen': @handleWindowToggleFullScreen
       'window:close': @handleWindowClose
-      'window:reload': @handleWindowReload
+      # 'window:reload': @handleWindowReload
       'window:toggle-dev-tools': @handleWindowToggleDevTools
 
     if process.platform in ['win32', 'linux']
